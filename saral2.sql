@@ -1,19 +1,21 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.9
--- http://www.phpmyadmin.net
+-- version 5.2.1deb2
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jan 31, 2019 at 07:50 PM
--- Server version: 5.1.53
--- PHP Version: 5.3.4
+-- Host: localhost:3306
+-- Generation Time: Dec 05, 2023 at 12:54 PM
+-- Server version: 10.11.5-MariaDB-3
+-- PHP Version: 8.2.10
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `saral2`
@@ -25,8 +27,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 -- Table structure for table `consignee`
 --
 
-CREATE TABLE IF NOT EXISTS `consignee` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `consignee` (
+  `id` int(11) NOT NULL,
   `cust_id` varchar(11) NOT NULL,
   `custname` varchar(255) NOT NULL,
   `cno` varchar(255) NOT NULL,
@@ -37,9 +39,8 @@ CREATE TABLE IF NOT EXISTS `consignee` (
   `pin_code` int(30) NOT NULL,
   `email` varchar(255) NOT NULL,
   `reg` date NOT NULL,
-  `gstin` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=45 ;
+  `gstin` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `consignee`
@@ -88,7 +89,9 @@ INSERT INTO `consignee` (`id`, `cust_id`, `custname`, `cno`, `country`, `sid`, `
 (41, 'VEE-001', 'VEERA ENTERPRISES', '0', 'India', 1, 'VAPI', 'Raghuvir Complex Opp. VIA G.I.D.C Vapi', 396195, '0', '0000-00-00', '24AHUPG9089N1ZB'),
 (42, 'PAR-001', 'PARTH ELECTRICALS', '0', 'India', 1, 'VAPI', 'Vapi Char Rasta G.I.D.C VAPI', 396195, '0', '0000-00-00', '24AFJPD8560L1Z7'),
 (43, 'TUL-002', 'TULSI ELECTRICALS', '0', 'INDIA', 1, 'SURAT', ' 2, Dhawanwala Complex, Opp. SBI, G.I.D.C Pandesara, SURAT', 394221, '0', '2017-10-12', '24AEFPB1023B1ZO'),
-(44, 'LUB', 'LUBI ELECTRICALS', '0', 'India', 1, 'gandhinagar', 'Survey No.248-250, S.P RING Road, Nana Chiloda, Ral& Dist Gandhinagar, Ahmedabad', 382330, '0', '0000-00-00', '24AABFL4708P1Z4');
+(44, 'LUB', 'LUBI ELECTRICALS', '0', 'India', 1, 'gandhinagar', 'Survey No.248-250, S.P RING Road, Nana Chiloda, Ral& Dist Gandhinagar, Ahmedabad', 382330, '0', '0000-00-00', '24AABFL4708P1Z4'),
+(45, '01', 'test', '12345890', 'india', 1, 'vapi', 'test', 4567, '0', '2023-12-05', '234567890'),
+(46, '01', 'TEST', '12345890', 'INDIA', 1, 'VAPI', '         test', 4567, 'test@test.com', '2023-12-05', '234567890');
 
 -- --------------------------------------------------------
 
@@ -96,8 +99,8 @@ INSERT INTO `consignee` (`id`, `cust_id`, `custname`, `cno`, `country`, `sid`, `
 -- Table structure for table `customer`
 --
 
-CREATE TABLE IF NOT EXISTS `customer` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `customer` (
+  `id` int(11) NOT NULL,
   `cust_id` varchar(11) NOT NULL,
   `custname` varchar(255) NOT NULL,
   `cno` varchar(255) NOT NULL,
@@ -108,9 +111,8 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `pin_code` int(30) NOT NULL,
   `email` varchar(255) NOT NULL,
   `reg` date NOT NULL,
-  `gstin` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=51 ;
+  `gstin` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `customer`
@@ -160,8 +162,10 @@ INSERT INTO `customer` (`id`, `cust_id`, `custname`, `cno`, `country`, `sid`, `c
 (46, 'PAR-001', 'PARTH ELECTRICALS', '0', 'India', 1, 'VAPI', 'Vapi Char Rasta G.I.D.C VAPI', 396195, '0', '0000-00-00', '24AFJPD8560L1Z7'),
 (47, 'TUL-002', 'TULSI ELECTRICALS', '0', 'INDIA', 1, 'SURAT', ' 2, Dhawanwala Complex, Opp. SBI, G.I.D.C Pandesara, SURAT', 394221, '0', '2017-10-12', '24AEFPB1023B1ZO'),
 (48, 'Nuc-001', 'NUCLEO SPARK INDUSTRIES', '02532380039', 'INDIA', 4, 'NASHIK', ' Plot No, H-119, M.I.D.C Ambad Nashik', 422010, 'nucleosparkind@gmail.com', '2018-03-16', '26AANFS4221Q1ZN'),
-(49, 'elt-001', 'ELTEL SYSTEM', '7045604020', 'INDIA', 4, 'THANA', '  Flat no 102, Building no 20, "KUSUMGIRI", Shiddhachal Phase 3, Vasant vihar, Thane west', 400610, '0', '2018-03-17', ''),
-(50, 'meco-001', 'MECO EXPORTS CO.', '022-32596162', 'India', 4, 'MUMBAI', ' PLOT NO. EL-60, ELECTRONIC ZONE, TTC INDUSTRIAL AREA, MAHAPE, NAVI MUMBAI', 400710, '0', '0000-00-00', '');
+(49, 'elt-001', 'ELTEL SYSTEM', '7045604020', 'INDIA', 4, 'THANA', '  Flat no 102, Building no 20, \"KUSUMGIRI\", Shiddhachal Phase 3, Vasant vihar, Thane west', 400610, '0', '2018-03-17', ''),
+(50, 'meco-001', 'MECO EXPORTS CO.', '022-32596162', 'India', 4, 'MUMBAI', ' PLOT NO. EL-60, ELECTRONIC ZONE, TTC INDUSTRIAL AREA, MAHAPE, NAVI MUMBAI', 400710, '0', '0000-00-00', ''),
+(51, '01', 'TEST', '12345890', 'INDIA', 1, 'VAPI', '  test ', 12343, 'test@test.com', '2023-12-05', '234567890'),
+(52, '01', 'TEST', '12345890', 'INDIA', 1, 'VAPI', ' test ', 12343, 'test@test.com', '2023-12-05', '234567890');
 
 -- --------------------------------------------------------
 
@@ -169,14 +173,14 @@ INSERT INTO `customer` (`id`, `cust_id`, `custname`, `cno`, `country`, `sid`, `c
 -- Table structure for table `invoice`
 --
 
-CREATE TABLE IF NOT EXISTS `invoice` (
-  `quot_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `invoice` (
+  `quot_id` int(11) NOT NULL,
   `quot_no` varchar(100) NOT NULL,
   `q_n` int(255) NOT NULL,
   `order_no` varchar(255) NOT NULL,
   `quot_cust` varchar(500) NOT NULL,
-  `state` varchar(255) NOT NULL,
-  `stateCode` varchar(255) NOT NULL,
+  `state` varchar(255) DEFAULT NULL,
+  `stateCode` varchar(255) DEFAULT NULL,
   `transmode` varchar(255) NOT NULL,
   `supplydate` date DEFAULT NULL,
   `conname` varchar(255) NOT NULL,
@@ -194,9 +198,8 @@ CREATE TABLE IF NOT EXISTS `invoice` (
   `sgst_amt` varchar(255) NOT NULL,
   `inv_date` date NOT NULL,
   `order_date` date DEFAULT NULL,
-  `rvalue` varchar(255) NOT NULL,
-  PRIMARY KEY (`quot_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=152 ;
+  `rvalue` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `invoice`
@@ -270,13 +273,13 @@ INSERT INTO `invoice` (`quot_id`, `quot_no`, `q_n`, `order_no`, `quot_cust`, `st
 (87, '65', 65, '140', '18', '', '', '', '2017-09-09', '16', '', '', '840.00', '0.00', '0.00', '991.00', '0', '18', '0', '0.00', '151.20', '0.00', '2017-09-09', '2017-09-07', '-0.20'),
 (88, '66', 66, '-', '8', '', '', '', '2017-09-09', '6', '', '', '3900.00', '0.00', '0.00', '4602.00', '0', '18', '0', '0.00', '702.00', '0.00', '2017-09-09', '2017-09-07', '0.00'),
 (89, '67', 67, 'Email', '12', '', '', '', '2017-09-09', '10', '', '', '930.00', '0.00', '0.00', '1097.00', '0', '18', '0', '0.00', '167.40', '0.00', '2017-09-09', '2017-09-08', '-0.40'),
-(90, '68', 68, '-', '28', '', '', 'surat Ahmd. trans  "CC Attached"- KADODARA', '2017-09-12', '26', '', '', '3744.00', '0.00', '0.00', '4418.00', '0', '18', '0', '0.00', '673.92', '0.00', '2017-09-12', '2017-09-12', '0.08'),
-(91, '69', 69, '-', '14', '', '', 'surat Ahmd. trans  "CC Attached"- MAKARPURA', '2017-09-12', '12', '', '', '19464.00', '0.00', '0.00', '22968.00', '0', '18', '0', '0.00', '3503.52', '0.00', '2017-09-12', '2017-09-12', '0.48'),
+(90, '68', 68, '-', '28', '', '', 'surat Ahmd. trans  \"CC Attached\"- KADODARA', '2017-09-12', '26', '', '', '3744.00', '0.00', '0.00', '4418.00', '0', '18', '0', '0.00', '673.92', '0.00', '2017-09-12', '2017-09-12', '0.08'),
+(91, '69', 69, '-', '14', '', '', 'surat Ahmd. trans  \"CC Attached\"- MAKARPURA', '2017-09-12', '12', '', '', '19464.00', '0.00', '0.00', '22968.00', '0', '18', '0', '0.00', '3503.52', '0.00', '2017-09-12', '2017-09-12', '0.48'),
 (92, '70', 70, '95', '18', '', '', '', '2017-09-12', '16', '', '', '5400.00', '0.00', '0.00', '6372.00', '0', '18', '0', '0.00', '972.00', '0.00', '2017-09-12', '2017-08-18', '0.00'),
 (93, '71', 71, 'RPUR1718/11700587', '31', '', '', '', '0000-00-00', '29', '', '', '9170.00', '0.00', '0.00', '10821.00', '9', '0', '9', '825.30', '0.00', '825.30', '2017-09-12', '2017-09-07', '0.40'),
 (94, '72', 72, '-', '32', '', '', '', '2017-09-13', '30', '', '', '990.00', '0.00', '0.00', '1168.00', '0', '18', '0', '0.00', '178.20', '0.00', '2017-09-13', '2017-09-13', '-0.20'),
 (95, '73', 73, 'phone', '24', '', '', '', '0000-00-00', '22', '', '', '2400.00', '0.00', '0.00', '2832.00', '0', '18', '0', '0.00', '432.00', '0.00', '2017-09-14', '2017-09-14', '0.00'),
-(96, '74', 74, '-', '14', '', '', 'surat Ahmd. trans  "CC Attached" MAKARPURA', '2017-09-14', '12', '', '', '11421.00', '0.00', '0.00', '13477.00', '0', '18', '0', '0.00', '2055.78', '0.00', '2017-09-14', '2017-09-12', '0.22'),
+(96, '74', 74, '-', '14', '', '', 'surat Ahmd. trans  \"CC Attached\" MAKARPURA', '2017-09-14', '12', '', '', '11421.00', '0.00', '0.00', '13477.00', '0', '18', '0', '0.00', '2055.78', '0.00', '2017-09-14', '2017-09-12', '0.22'),
 (97, '75', 75, '-', '30', '', '', '', '0000-00-00', '28', '', '', '609.00', '0.00', '0.00', '719.00', '9', '0', '9', '54.81', '0.00', '54.81', '2017-09-15', '2017-09-15', '0.38'),
 (98, '76', 76, '136 & 165', '18', '', '', '', '2017-09-15', '16', '', '', '6854.00', '0.00', '0.00', '8088.00', '0', '18', '0', '0.00', '1233.72', '0.00', '2017-09-15', '2017-09-12', '0.28'),
 (99, '77', 77, 'phone', '32', '', '', '', '0000-00-00', '30', '', '', '540.00', '0.00', '0.00', '637.00', '0', '18', '0', '0.00', '97.20', '0.00', '2017-09-15', '2017-09-15', '-0.20'),
@@ -287,8 +290,8 @@ INSERT INTO `invoice` (`quot_id`, `quot_no`, `q_n`, `order_no`, `quot_cust`, `st
 (104, '82', 82, '-', '36', '', '', '', '0000-00-00', '33', '', '', '720.00', '0.00', '0.00', '850.00', '9', '0', '9', '64.80', '0.00', '64.80', '2017-09-19', '2017-09-19', '0.40'),
 (105, '83', 83, '-', '10', '', '', '', '2017-09-19', '8', '', '', '780.00', '0.00', '0.00', '920.00', '0', '18', '0', '0.00', '140.40', '0.00', '2017-09-19', '2017-09-19', '-0.40'),
 (106, '84', 84, '-', '15', '', '', '', '2017-09-20', '13', '', '', '1512.00', '0.00', '0.00', '1784.00', '0', '18', '0', '0.00', '272.16', '0.00', '2017-09-20', '2017-09-18', '-0.16'),
-(107, '85', 85, '142', '37', '', '', 'surat Ahmd. trans  "CC Attached" TARAPUR', '2017-09-22', '34', '', '', '10350.00', '0.00', '0.00', '12213.00', '0', '18', '0', '0.00', '1863.00', '0.00', '2017-09-22', '2017-09-06', '0.00'),
-(108, '86', 86, 'TS/KDR/10', '39', '', '', 'surat Ahmd. trans  "CC Attached"  KADODARA', '2017-09-22', '35', '', '', '13080.00', '0.00', '0.00', '15434.00', '0', '18', '0', '0.00', '2354.40', '0.00', '2017-09-22', '2017-09-16', '-0.40'),
+(107, '85', 85, '142', '37', '', '', 'surat Ahmd. trans  \"CC Attached\" TARAPUR', '2017-09-22', '34', '', '', '10350.00', '0.00', '0.00', '12213.00', '0', '18', '0', '0.00', '1863.00', '0.00', '2017-09-22', '2017-09-06', '0.00'),
+(108, '86', 86, 'TS/KDR/10', '39', '', '', 'surat Ahmd. trans  \"CC Attached\"  KADODARA', '2017-09-22', '35', '', '', '13080.00', '0.00', '0.00', '15434.00', '0', '18', '0', '0.00', '2354.40', '0.00', '2017-09-22', '2017-09-16', '-0.40'),
 (109, '87', 87, '-', '4', '', '', '', '0000-00-00', '2', '', '', '2160.00', '0.00', '0.00', '2549.00', '0', '18', '0', '0.00', '388.80', '0.00', '2017-09-23', '2017-09-06', '0.20'),
 (110, '88', 88, '119', '17', '', '', '', '2017-09-25', '15', '', '', '3891.00', '0.00', '0.00', '4591.00', '0', '18', '0', '0.00', '700.38', '0.00', '2017-09-25', '2017-09-22', '-0.38'),
 (111, '89', 89, 'EMAIL', '40', '', '', '', '2017-09-25', '36', '', '', '10881.00', '0.00', '0.00', '12840.00', '0', '18', '0', '0.00', '1958.58', '0.00', '2017-09-25', '2017-09-22', '0.42'),
@@ -326,7 +329,15 @@ INSERT INTO `invoice` (`quot_id`, `quot_no`, `q_n`, `order_no`, `quot_cust`, `st
 (148, 'proforma', 100, 'r/0253', '20', '', '', '', '1970-01-01', '44', '', '', '12633.00', '0.00', '0.00', '14907.00', '0 ', '18', '0', '0.00', '2273.94', '0.00', '2018-11-25', '2018-07-10', '0.06'),
 (149, '101', 100, '-', '50', '', '', '', '2018-12-07', '--CONSIGNEE NAME--', '', '', '', '', '', '', '0', '0', '0', '0', '0', '0', '2018-12-07', '2018-12-07', ''),
 (150, '2', 2, '-', '50', '', '', '', '2018-12-07', '--CONSIGNEE NAME--', '', '', '0.00', '0.00', '0.00', '0.00', '0', '0', '0', '0.00', '0.00', '0.00', '2018-12-07', '2018-12-07', '0.00'),
-(151, '2', 100, '-', '50', '', '', '', '2018-12-07', '--CONSIGNEE NAME--', '', '', '666.00', '0.00', '0.00', '786.00', '0', '18', '0', '0.00', '119.88', '0.00', '2019-01-31', '2018-12-07', '0.12');
+(151, '2', 100, '-', '50', '', '', '', '2018-12-07', '--CONSIGNEE NAME--', '', '', '666.00', '0.00', '0.00', '786.00', '0', '18', '0', '0.00', '119.88', '0.00', '2019-01-31', '2018-12-07', '0.12'),
+(152, '1', 100, '1456', '4', NULL, NULL, 'tra', '2023-11-30', '5', '112', '1234', '264.00', '0.00', '0.00', '312.00', '9', '9', '0', '23.76', '23.76', '0.00', '2023-11-30', '2023-11-30', '0.48'),
+(153, '1', 101, '1456', '4', NULL, NULL, 'tra', '2023-11-30', '5', '112', '1234', '264.00', '0.00', '0.00', '312.00', '9', '9', '0', '23.76', '23.76', '0.00', '2023-11-30', '2023-11-30', '0.48'),
+(154, '1', 102, '1456', '4', NULL, NULL, 'tra', '2023-11-30', '5', '112', '1234', '264.00', '0.00', '0.00', '312.00', '9', '9', '0', '23.76', '23.76', '0.00', '2023-11-30', '2023-11-30', '0.48'),
+(155, '1', 103, '1456', '4', NULL, NULL, 'tra', '2023-11-30', '5', '112', '1234', '264.00', '0.00', '0.00', '312.00', '9', '9', '0', '23.76', '23.76', '0.00', '2023-11-30', '2023-11-30', '0.48'),
+(156, '1', 104, '1456', '4', NULL, NULL, 'tra', '2023-11-30', '5', '112', '1234', '264.00', '0.00', '0.00', '312.00', '9', '9', '0', '23.76', '23.76', '0.00', '2023-11-30', '2023-11-30', '0.48'),
+(157, '1', 105, '1456', '4', NULL, NULL, 'tra', '2023-11-30', '5', '112', '1234', '264.00', '0.00', '0.00', '312.00', '9', '9', '0', '23.76', '23.76', '0.00', '2023-11-30', '2023-11-30', '0.48'),
+(158, '1', 106, '1456', '4', NULL, NULL, 'tra', '2023-11-30', '5', '112', '1234', '264.00', '0.00', '0.00', '312.00', '9', '9', '0', '23.76', '23.76', '0.00', '2023-11-30', '2023-11-30', '0.48'),
+(159, '107', 107, '123', '10', NULL, NULL, 'courrer', '2023-11-30', '5', '', '2345', '529.00', '0.00', '0.00', '529.00', '0', '0', '0', '0.00', '0.00', '0.00', '2023-11-30', '2023-11-30', '0.00');
 
 -- --------------------------------------------------------
 
@@ -334,8 +345,8 @@ INSERT INTO `invoice` (`quot_id`, `quot_no`, `q_n`, `order_no`, `quot_cust`, `st
 -- Table structure for table `invoice_desc`
 --
 
-CREATE TABLE IF NOT EXISTS `invoice_desc` (
-  `quotdesc_id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `invoice_desc` (
+  `quotdesc_id` int(11) NOT NULL,
   `quot_id` varchar(100) NOT NULL,
   `item_desc` varchar(500) NOT NULL,
   `quantity` varchar(100) NOT NULL,
@@ -344,9 +355,8 @@ CREATE TABLE IF NOT EXISTS `invoice_desc` (
   `total` varchar(100) NOT NULL,
   `dis` varchar(255) NOT NULL,
   `tax_val` varchar(255) NOT NULL,
-  `updated_date` datetime NOT NULL,
-  PRIMARY KEY (`quotdesc_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=474 ;
+  `updated_date` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `invoice_desc`
@@ -734,7 +744,8 @@ INSERT INTO `invoice_desc` (`quotdesc_id`, `quot_id`, `item_desc`, `quantity`, `
 (470, '147', '250/5,5VA, Cl.1.0, (ID-35mm), Tape wound C.T', '9', 'pcs', '177.00', '1593.00', '0', '1593.00', '2018-11-25 18:54:02'),
 (471, '150', 'CLAMP ON METER 2250 FOR SERVICE(RETURNABLE)', '2', 'pcs', '0.00', '0.00', '0', '0.00', '2018-12-07 14:03:01'),
 (472, '151', 'CLAMP ON METER 2250 FOR SERVICE(RETURNABLE)', '2', 'pcs', '0.00', '0.00', '0', '0.00', '2019-01-31 19:38:55'),
-(473, '151', '3000/5,15VA Cl.1.0,Rect.(150 x75) Tape wound C.T', '1', 'pcs', '666', '666.00', '', '666.00', '2019-01-31 19:38:55');
+(473, '151', '3000/5,15VA Cl.1.0,Rect.(150 x75) Tape wound C.T', '1', 'pcs', '666', '666.00', '', '666.00', '2019-01-31 19:38:55'),
+(474, '159', '18', '23', 'pcs', '23', '529.00', '0.00', '529.00', '2023-11-30 13:02:13');
 
 -- --------------------------------------------------------
 
@@ -742,14 +753,13 @@ INSERT INTO `invoice_desc` (`quotdesc_id`, `quot_id`, `item_desc`, `quantity`, `
 -- Table structure for table `item_detail`
 --
 
-CREATE TABLE IF NOT EXISTS `item_detail` (
-  `p_sno` int(9) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `item_detail` (
+  `p_sno` int(9) NOT NULL,
   `p_code` varchar(10) NOT NULL,
   `p_name` varchar(100) NOT NULL,
   `p_hsn` varchar(40) NOT NULL,
-  `p_taxrate` int(5) NOT NULL,
-  PRIMARY KEY (`p_sno`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=190 ;
+  `p_taxrate` int(5) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `item_detail`
@@ -938,7 +948,10 @@ INSERT INTO `item_detail` (`p_sno`, `p_code`, `p_name`, `p_hsn`, `p_taxrate`) VA
 (186, 'REC-1250/5', '1250/5,10VA, Cl.1.0, Rect.(55x70), Tape wound C.T', '8504', 18),
 (187, 'REC-1250/5', '1250/5,10VA, Cl.1.0, Rect.(85x65mm), Tape wound C.T', '8504', 18),
 (188, 'rou-250/5', '250/5,5VA, Cl.1.0, (ID-35mm), Tape wound C.T', '8504', 18),
-(189, 'CLAMP ON ', 'CLAMP ON METER 2250 FOR SERVICE(RETURNABLE)', '90303990', 18);
+(189, 'CLAMP ON ', 'CLAMP ON METER 2250 FOR SERVICE(RETURNABLE)', '90303990', 18),
+(200, 'test', 'test,testVA, Cl.test, test, test', '4567', 3),
+(198, 'test', 'test,testVA, Cl.test, test, test', '4567', 2),
+(199, 'test', 'test,testVA, Cl.test, test, test', '4567', 2);
 
 -- --------------------------------------------------------
 
@@ -946,12 +959,11 @@ INSERT INTO `item_detail` (`p_sno`, `p_code`, `p_name`, `p_hsn`, `p_taxrate`) VA
 -- Table structure for table `state`
 --
 
-CREATE TABLE IF NOT EXISTS `state` (
-  `sid` int(10) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `state` (
+  `sid` int(10) NOT NULL,
   `state_code` int(10) NOT NULL,
-  `state` varchar(255) NOT NULL,
-  PRIMARY KEY (`sid`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+  `state` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `state`
@@ -961,4 +973,90 @@ INSERT INTO `state` (`sid`, `state_code`, `state`) VALUES
 (1, 24, 'GUJARAT'),
 (2, 26, 'DADRA & NAGAR HAVELI'),
 (3, 25, 'DAMAN & DIU'),
-(4, 27, 'MAHARASHTRA');
+(4, 27, 'MAHARASHTRA'),
+(6, 1, 'TEST');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `consignee`
+--
+ALTER TABLE `consignee`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `invoice`
+--
+ALTER TABLE `invoice`
+  ADD PRIMARY KEY (`quot_id`);
+
+--
+-- Indexes for table `invoice_desc`
+--
+ALTER TABLE `invoice_desc`
+  ADD PRIMARY KEY (`quotdesc_id`);
+
+--
+-- Indexes for table `item_detail`
+--
+ALTER TABLE `item_detail`
+  ADD PRIMARY KEY (`p_sno`);
+
+--
+-- Indexes for table `state`
+--
+ALTER TABLE `state`
+  ADD PRIMARY KEY (`sid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `consignee`
+--
+ALTER TABLE `consignee`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+
+--
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+
+--
+-- AUTO_INCREMENT for table `invoice`
+--
+ALTER TABLE `invoice`
+  MODIFY `quot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
+
+--
+-- AUTO_INCREMENT for table `invoice_desc`
+--
+ALTER TABLE `invoice_desc`
+  MODIFY `quotdesc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=475;
+
+--
+-- AUTO_INCREMENT for table `item_detail`
+--
+ALTER TABLE `item_detail`
+  MODIFY `p_sno` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
+
+--
+-- AUTO_INCREMENT for table `state`
+--
+ALTER TABLE `state`
+  MODIFY `sid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
