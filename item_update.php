@@ -1,26 +1,3 @@
-<!--	if(isset($_POST["Add"]))
-{
-	
-	
-	 $pc=$_POST['prd_no'];
-	 $pn=$_POST['itm_name']. " for " . $_POST['proce']. " only. " .$_POST['size'];
-	 $psac=$_POST['SAC'];
-	 $ptax=$_POST['tax_no'];
-	
- echo $sql="insert into item_detail(p_code,p_name,p_hsn,p_taxrate) values('".$pc."','".$pn."','".$psac."','".$ptax."') ";
-  
-  if(mysqli_query($conn, $sql))
-   {
-   //$msg="Added Successfully";
-   echo '<script type="text/javascript">alert("Item successfully Added")</script>';
-   //header("location: customer-list.php");
-   }
-   else
-   
-	   echo '<script type="text/javascript">alert("Invalid data")</script>';
-   
-	
-}-->
 <?php
 
 include_once("conn.php");
@@ -36,7 +13,10 @@ if (isset($_POST["update"])) {
 
 	$sql = "update item_detail set p_code='" . $pc . "', p_name='" . $pn . "', p_hsn='" . $psac . "', p_taxrate='" . $ptax . "' where p_sno=$id";
 	if (mysqli_query($conn, $sql) > 0) {
-		header("location:item-list.php");
+		echo '<script type="text/javascript">';
+		echo 'alert("Item successfully Updated");';
+		echo 'window.location.href = "item-list.php";';
+		echo '</script>';
 	} else {
 		header("location:item_update.php");
 	}
@@ -137,13 +117,6 @@ if (isset($_POST["update"])) {
 			</div>
 		</div>
 	</div>
-	<script>
-		$(document).ready(function() {
-			$('#updated').submit(function() {
-				alert('Successfully Updated');
-			});
-		});
-	</script>
 </body>
 
 </html>

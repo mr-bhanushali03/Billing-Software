@@ -1,6 +1,6 @@
 <?php
 	require_once("conn.php");
-	$state = $_POST['state'];
+	$state = strtoupper($_POST['state']);
 	$sid = $_POST['sid'];
 	
 	$s = mysqli_query($conn, "SELECT * FROM state")or die(mysqli_error());

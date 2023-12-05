@@ -3,26 +3,27 @@ include_once("conn.php");
 if (isset($_POST["Add"])) {
 
 	$cid = $_POST["cust_id"];
-	$cname = $_POST["c_name"];
+	$cname = strtoupper($_POST["c_name"]);
 	$con = $_POST["c_phone"];
-	//echo $mob=$_POST["c_mob"];
-	$cont = $_POST["c_country"];
-	//echo $statecod=$_POST["statecode"];
+	$cont = strtoupper($_POST["c_country"]);
 	$state = $_POST["c_state"];
 	$gstinn = $_POST["gstinn"];
-	$city = $_POST["c_city"];
+	$city = strtoupper($_POST["c_city"]);
 	$add = $_POST["c_addr"];
 	$pin = $_POST["c_pin"];
 	$eml = $_POST["emaill"];
+	$date = date("Y-m-d");
 
-	echo $sql = "insert into consignee(cust_id,custname,cno,country,sid,city,addr,pin_code,email,reg,gstin) 
-	 values('" . $cid . "','" . $cname . "','" . $con . "','" . $cont . "','" . $state . "','" . $city . "','" . $add . "','" . $pin . "','" . $eml . "','','" . $gstinn . "') ";
+	$sql = "INSERT INTO consignee (cust_id, custname, cno, country, sid, city, addr, pin_code, email, reg, gstin) 
+        VALUES ('$cid', '$cname', '$con', '$cont', '$state', '$city', '$add', '$pin', '$eml', '$date', '$gstinn')";
 
 	if (mysqli_query($conn, $sql)) {
-		$msg = "Added Successfully";
-		//windows.alert("added");
+		echo '<script type="text/javascript">';
+		echo 'alert("Consignee successfully Added");';
+		echo 'window.location.href = "consignee-list.php";';
+		echo '</script>';
 	} else {
-		$msg = "required field missing";
+		header("Location: consignee.php");
 	}
 }
 
@@ -158,7 +159,7 @@ if (isset($_POST["Add"])) {
 								</th>
 
 								<th class="col-md-8">
-									<input type="text" data-error="Enter Email id" required="required" name="emaill" class="form-control white-class">
+									<input type="email" data-error="Enter Email id" required="required" name="emaill" class="form-control white-class">
 								</th>
 							</tr>
 
@@ -180,8 +181,6 @@ if (isset($_POST["Add"])) {
 				</table>
 			</div>
 		</div>
-
-		<a id="add_row" class="btn btn-default pull-left">Add Row</a><a id='delete_row' class="pull-right btn btn-default">Delete Row</a>
 	</div>
 </body>
 

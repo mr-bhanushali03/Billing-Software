@@ -17,11 +17,15 @@ if (isset($_POST["Add"])) {
             VALUES ('$cid', '$cname', '$phone', '$country', '$state', '$city', '$addr', '$pin', '$email', '$date', '$gst')";
 
 	if (mysqli_query($conn, $sql)) {
-		echo '<script type="text/javascript">alert("Customer successfully Added")</script>';
-		header("location: customer-list.php");
+		echo '<script type="text/javascript">';
+		echo 'alert("Customer successfully Added");';
+		echo 'window.location.href = "customer-list.php";';
+		echo '</script>';
 	} else {
-		echo '<script type="text/javascript">alert("Invalid data")</script>';
-		header("location: customer.php");
+		echo '<script type="text/javascript">';
+		echo 'alert("Customer not Added");';
+		echo 'window.location.href = "customer.php";';
+		echo '</script>';
 	}
 }
 ?>

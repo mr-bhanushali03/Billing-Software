@@ -10,10 +10,12 @@ if (isset($_POST["Add"])) {
 	$sql = "insert into item_detail(p_code,p_name,p_hsn,p_taxrate) values('" . $pc . "','" . $pn . "','" . $phsn . "','" . $ptax . "') ";
 
 	if (mysqli_query($conn, $sql)) {
-		$msg = "Added Successfully";
-		//windows.alert("added");
+		echo '<script type="text/javascript">';
+		echo 'alert("Item successfully Added");';
+		echo 'window.location.href = "item-list.php";';
+		echo '</script>';
 	} else {
-		$msg = "required field missing";
+		header("Location: item_detail.php");
 	}
 }
 
@@ -144,13 +146,6 @@ if (isset($_POST["Add"])) {
 		</div>
 
 	</div>
-	<script>
-		$(document).ready(function() {
-			$('#tab_logic').submit(
-				alert('Successfully Added')
-			);
-		});
-	</script>
 </body>
 
 </html>
