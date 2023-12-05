@@ -146,9 +146,9 @@ if (isset($_POST["Add"])) {
 	</div>
 	<script>
 		$(document).ready(function() {
-			$("#tab_logic").on('submit') {
-				alert("Successfully added");
-			}
+			$('#tab_logic').submit(
+				alert('Successfully Added')
+			);
 		});
 	</script>
 </body>
