@@ -20,7 +20,6 @@ $consigneeCount = mysqli_num_rows($consignees);
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <style>
-    /* Add custom styles here */
     .backup-btn {
       position: absolute;
       top: 10px;
@@ -33,6 +32,11 @@ $consigneeCount = mysqli_num_rows($consignees);
       border: 1px solid #ccc;
       border-radius: 5px;
       text-align: center;
+      color: black;
+    }
+
+    .count-box a {
+      text-decoration: none;
     }
   </style>
 </head>
@@ -46,30 +50,38 @@ $consigneeCount = mysqli_num_rows($consignees);
   <!-- Count Boxes -->
   <div class="container">
     <div class="row">
-      <div class="col-md-3">
-        <div class="count-box">
-          <h3>Invoice</h3>
-          <p><?= $invoiceCount ?></p>
+      <a href="quot_list.php">
+        <div class="col-md-3">
+          <div class="count-box">
+            <h3>Invoice</h3>
+            <p><?= $invoiceCount ?></p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="count-box">
-          <h3>Item</h3>
-          <p><?= $itemCount ?></p>
+      </a>
+      <a href="item-list.php">
+        <div class="col-md-3">
+          <div class="count-box">
+            <h3>Item</h3>
+            <p><?= $itemCount ?></p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="count-box">
-          <h3>Customer</h3>
-          <p><?= $customerCount ?></p>
+      </a>
+      <a href="customer-list.php">
+        <div class="col-md-3">
+          <div class="count-box">
+            <h3>Customer</h3>
+            <p><?= $customerCount ?></p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-3">
-        <div class="count-box">
-          <h3>Consignee</h3>
-          <p><?= $consigneeCount ?></p>
+      </a>
+      <a href="consignee-list.php">
+        <div class="col-md-3">
+          <div class="count-box">
+            <h3>Consignee</h3>
+            <p><?= $consigneeCount ?></p>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </body>

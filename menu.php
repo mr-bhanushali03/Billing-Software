@@ -31,8 +31,6 @@
 
 <div class="topnav">
   <a class="active" href="index.php">Home</a>
-  <a href="invoice.php">Create Invoice</a>
-  <!--<a href="#">View Invoice</a>-->
   <a href="quot_list.php">View Invoice</a>
   <a href="item-list.php">Item Master</a>
   <a href="customer-list.php">Customer Master</a>

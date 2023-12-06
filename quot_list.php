@@ -32,7 +32,11 @@
                                  <div class="col-sm-12">
                                      <div class="row">
                                          <div class="col-sm-12">
-
+                                             <div align="right" style="padding-right:50px;"><a href="invoice.php"><button type="button" class="btn btn-success">
+                                                         <font size="3"><i class="fa fa-plus"> ADD NEW</i></font>
+                                                     </button>
+                                                 </a>
+                                             </div>
                                              <div class="card-box table-responsive">
                                                  <table class="table table-bordered table-striped paginate" align="center">
                                                      <thead>
