@@ -32,6 +32,7 @@ if (isset($_POST["Add"])) {
 <html>
 
 <head>
+	<title>CONSIGNEE</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

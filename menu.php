@@ -1,32 +1,32 @@
-
-
 <style>
-body {margin:0;}
+  body {
+    margin: 0;
+  }
 
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
 
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
 
-.topnav a.active {
+  .topnav a.active {
     background-color: #4CAF50;
     color: white;
-}
+  }
 </style>
 
 <div class="topnav">
@@ -40,5 +40,3 @@ body {margin:0;}
   <a href="state-list.php">State</a>
   <a href="gstdetail.php">Gst list</a>
 </div>
-
-

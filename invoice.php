@@ -51,6 +51,7 @@ if (isset($_REQUEST['inv_id'])) {
 
 <head>
 
+  <title>INVOICE</title>
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />

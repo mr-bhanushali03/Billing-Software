@@ -8,6 +8,7 @@ $r = mysqli_fetch_array($retrive_query)
 <html>
 
 <head>
+	<title>State</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

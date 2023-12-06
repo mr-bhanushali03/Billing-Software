@@ -5,6 +5,7 @@ require_once("sqlfiles/conn.php");
 <html>
 
 <head>
+	<title>State List</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

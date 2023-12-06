@@ -9,72 +9,10 @@ $row = mysqli_fetch_array($sql);
 <html>
 
 <head>
+	<title>CUSTOMER DETAILS</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-
-	<!--<script>
-	function ValidatePAN(Obj) {    
-        if (Obj.value != "") {
-            ObjVal = Obj.value;
-            var panPat = /^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})$/;
-            if (ObjVal.search(panPat) == -1) {
-                alert("Invalid Pan No");
-                Obj.focus(pan);
-                return false;
-            }
-        }
-  } 
-
-
-
-</script>
-<script language="JavaScript">
-
-function pan_validate(pan)
-{
-
-var regpan = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/;
-
-if(regpan.test(pan) == false)
-{
-
-document.getElementById("status").innerHTML = "Permanent Account Number is not yet valid.";
-color: red;
-
-}
-else
-{
-
-document.getElementById("status").innerHTML = "You have entered a valid Permanent Account Number !"; 
-
-}
-}
-</script>
-<script language="javascript"> 
-function gstinn_validate(gstinn)
-{
-
-var regpan = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
-
-if(regpan.test(gstinn) == false)
-{
-
-document.getElementById("gstatus").innerHTML = "GSTIN is not yet valid.";
-color: red;
-
-}
-else
-{
-
-document.getElementById("gstatus").innerHTML = "You have entered a valid GSTIN NO !"; 
-
-}
-}
-
-</script>-->
-
-
 </head>
 
 <body>
@@ -88,13 +26,6 @@ document.getElementById("gstatus").innerHTML = "You have entered a valid GSTIN N
 		<div class="row clearfix">
 			<div class="col-md-8 column">
 
-
-
-
-
-
-
-
 				<table class="table table-bordered table-hover" id="tab_logic">
 					<form method="post" action="">
 						<thead>
@@ -107,8 +38,6 @@ document.getElementById("gstatus").innerHTML = "You have entered a valid GSTIN N
 									<input type="text" data-error="Enter customer Id" required="required" name="cust_id" value="<?php echo $row['cust_id']; ?>" class="form-control white-class">
 								</th>
 							</tr>
-
-
 
 							<tr>
 								<th class="text-center">
@@ -141,8 +70,6 @@ document.getElementById("gstatus").innerHTML = "You have entered a valid GSTIN N
 								</th>
 							</tr>
 
-
-
 							<tr>
 
 								<th class="text-center">
@@ -155,7 +82,6 @@ document.getElementById("gstatus").innerHTML = "You have entered a valid GSTIN N
 								</th>
 							</tr>
 
-
 							<tr>
 								<th class="text-center">
 									<label class="col-xl-3 control-label">City: </label>
@@ -165,10 +91,6 @@ document.getElementById("gstatus").innerHTML = "You have entered a valid GSTIN N
 									<input type="text" data-error="Enter city" required="required" name="c_city" value="<?php echo $row['city']; ?>" class="form-control white-class">
 								</th>
 							</tr>
-
-
-
-
 
 							<tr>
 
@@ -229,8 +151,6 @@ document.getElementById("gstatus").innerHTML = "You have entered a valid GSTIN N
 								</th>
 							</tr>
 
-
-
 							<tr>
 								<th class="text-center">
 									<label class="col-xl-3 control-label">Email Id: </label>
@@ -243,7 +163,6 @@ document.getElementById("gstatus").innerHTML = "You have entered a valid GSTIN N
 
 							<tr>
 
-
 								<th class="col-md-8 text-center" colspan="2">
 									<a href="customer_update.php?C_id=<?php echo $row['id'] ?>" class="btn btn-primary text-orange" target="" class="on-default remove-row"><i class="fa fa-eye"> Want to Update???</i></a>
 									<a href="customer-list.php" class="btn btn-primary text-orange" target="" class="on-default remove-row"><i class="fa fa-eye"> Cancel</i></a>
@@ -251,22 +170,15 @@ document.getElementById("gstatus").innerHTML = "You have entered a valid GSTIN N
 								</th>
 							</tr>
 
-
-
-
 						</thead>
 
-
-
 						<tbody>
-
 
 						</tbody>
 					</form>
 				</table>
 			</div>
 		</div>
-
 
 	</div>
 </body>

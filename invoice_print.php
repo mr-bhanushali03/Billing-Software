@@ -8,12 +8,12 @@ $row = mysqli_fetch_array($sql);
 <html moznomarginboxes mozdisallowselectionprint>
 
 <head>
+	<title>INVOICE PRINT</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href="css/icons.css" rel="stylesheet" type="text/css" />
 	<link href="css/pages.css" rel="stylesheet" type="text/css" />
 	<link href="css/font/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link href="css/responsive.css" rel="stylesheet" type="text/css" />
-
-
 
 	<style type="text/css" media="print">
 		@page {
