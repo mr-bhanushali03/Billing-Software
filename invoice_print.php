@@ -99,12 +99,11 @@ $row = mysqli_fetch_array($sql);
 		</table>
 		<table class="tableizer-table" height="297mm" width="" align="center" border="">
 
-
 			<thead>
 
 				<tr>
 					<th colspan="30" valign="bottam">
-						<font size="6"><b>SARAL ELECTRICALS</b></font>
+						<font size="6"><b>DEMO</b></font>
 					</th>
 
 				</tr>
@@ -113,7 +112,7 @@ $row = mysqli_fetch_array($sql);
 			<tbody>
 				<tr>
 
-					<td colspan="30" align="center"> 22,Raj Industrial Estate,66 KV Amli, Industrial Area,</br> SILVASSA-396 230, (U.T) Ph.:(0260)2643317</td>
+					<td colspan="30" align="center"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, animi.</br> Lorem ipsum dolor sit amet.</td>
 
 				</tr>
 				<tr>
@@ -338,7 +337,7 @@ $row = mysqli_fetch_array($sql);
 				</tr>
 
 				<tr>
-					<td colspan="23"><b>HDFC BANK A/c no.</b>&nbsp;&nbsp;&nbsp;&nbsp;00742020000639
+					<td colspan="23"><b>HDFC BANK A/c no.</b>&nbsp;&nbsp;&nbsp;&nbsp;00742023400639
 					</td>
 					<td colspan="2"><b>Round Off</b></td>
 
@@ -346,7 +345,7 @@ $row = mysqli_fetch_array($sql);
 
 				</tr>
 				<tr>
-					<td colspan="23"><b>RTGS/NEFT IFSC:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HDFC0000074</td>
+					<td colspan="23"><b>RTGS/NEFT IFSC:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HDFC1200074</td>
 					<td colspan="2"><b>Grand Total</b></td>
 
 					<td colspan="4" align="right" class="a"><i class="fa fa-rupee"></i> <?php echo number_format(($row['grandtotal']), 2) ?></td>
@@ -413,7 +412,7 @@ $row = mysqli_fetch_array($sql);
 				<tr rowspan="">
 					<td colspan="24" valign="top"><b>NOTE:</b> &nbsp;1. This Invoice is due for payment on_______</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Interest at the rate of 15% p.a will be charged after due date.</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp3. our responsibility ceases no sooner the goods leave our premises.</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Subject to <b>SILVASSA</b> Jurisdiction
 					</td>
-					<td colspan="4" rowspan="" height="80" cellborder="0" align="right" valign="top"><b>For SARAL ELECTRICALS</b><br><br><br><br>Authorised Signatory</td>
+					<td colspan="4" rowspan="" height="80" cellborder="0" align="right" valign="top"><b>For DEMO</b><br><br><br><br>Authorised Signatory</td>
 
 
 
@@ -451,7 +450,7 @@ $row = mysqli_fetch_array($sql);
 
 				<tr>
 					<th colspan="30" valign="bottam">
-						<font size="6"><b>SARAL ELECTRICALS</b></font>
+						<font size="6"><b>DEMO</b></font>
 					</th>
 
 				</tr>
@@ -460,7 +459,7 @@ $row = mysqli_fetch_array($sql);
 			<tbody>
 				<tr>
 
-					<td colspan="30" align="center"> 22,Raj Industrial Estate,66 KV Amli, Industrial Area,</br> SILVASSA-396 230, (U.T) Ph.:(0260)2643317</td>
+					<td colspan="30" align="center"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, animi.</br> Lorem ipsum dolor sit amet.</td>
 
 				</tr>
 				<tr>
@@ -702,7 +701,7 @@ $row = mysqli_fetch_array($sql);
 				</tr>
 
 				<tr>
-					<td colspan="23"><b>HDFC BANK A/c no.</b>&nbsp;&nbsp;&nbsp;&nbsp;00742020000639
+					<td colspan="23"><b>HDFC BANK A/c no.</b>&nbsp;&nbsp;&nbsp;&nbsp;00742023400639
 					</td>
 					<td colspan="2"><b>Round Off</b></td>
 
@@ -710,7 +709,7 @@ $row = mysqli_fetch_array($sql);
 
 				</tr>
 				<tr>
-					<td colspan="23"><b>RTGS/NEFT IFSC:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HDFC0000074</td>
+					<td colspan="23"><b>RTGS/NEFT IFSC:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HDFC1200074</td>
 					<td colspan="2"><b>Grand Total</b></td>
 
 					<td colspan="4" align="right" class="a"><i class="fa fa-rupee"></i> <?php echo number_format(($row['grandtotal']), 2) ?></td>
@@ -777,7 +776,7 @@ $row = mysqli_fetch_array($sql);
 				<tr rowspan="">
 					<td colspan="24" valign="top"><b>NOTE:</b> &nbsp;1. This Invoice is due for payment on_______</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Interest at the rate of 15% p.a will be charged after due date.</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp3. our responsibility ceases no sooner the goods leave our premises.</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Subject to <b>SILVASSA</b> Jurisdiction
 					</td>
-					<td colspan="4" rowspan="" height="80" cellborder="0" align="right" valign="top"><b>For SARAL ELECTRICALS</b><br><br><br><br>Authorised Signatory</td>
+					<td colspan="4" rowspan="" height="80" cellborder="0" align="right" valign="top"><b>For DEMO</b><br><br><br><br>Authorised Signatory</td>
 
 
 
@@ -813,7 +812,7 @@ $row = mysqli_fetch_array($sql);
 
 				<tr>
 					<th colspan="30" valign="bottam">
-						<font size="6"><b>SARAL ELECTRICALS</b></font>
+						<font size="6"><b>DEMO</b></font>
 					</th>
 
 				</tr>
@@ -822,7 +821,7 @@ $row = mysqli_fetch_array($sql);
 			<tbody>
 				<tr>
 
-					<td colspan="30" align="center"> 22,Raj Industrial Estate,66 KV Amli, Industrial Area,</br> SILVASSA-396 230, (U.T) Ph.:(0260)2643317</td>
+					<td colspan="30" align="center"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, animi.</br> Lorem ipsum dolor sit amet.</td>
 
 				</tr>
 				<tr>
@@ -1064,7 +1063,7 @@ $row = mysqli_fetch_array($sql);
 				</tr>
 
 				<tr>
-					<td colspan="23"><b>HDFC BANK A/c no.</b>&nbsp;&nbsp;&nbsp;&nbsp;00742020000639
+					<td colspan="23"><b>HDFC BANK A/c no.</b>&nbsp;&nbsp;&nbsp;&nbsp;00742023400639
 					</td>
 					<td colspan="2"><b>Round Off</b></td>
 
@@ -1072,7 +1071,7 @@ $row = mysqli_fetch_array($sql);
 
 				</tr>
 				<tr>
-					<td colspan="23"><b>RTGS/NEFT IFSC:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HDFC0000074</td>
+					<td colspan="23"><b>RTGS/NEFT IFSC:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HDFC1200074</td>
 					<td colspan="2"><b>Grand Total</b></td>
 
 					<td colspan="4" align="right" class="a"><i class="fa fa-rupee"></i> <?php echo number_format(($row['grandtotal']), 2) ?></td>
@@ -1139,7 +1138,7 @@ $row = mysqli_fetch_array($sql);
 				<tr rowspan="">
 					<td colspan="24" valign="top"><b>NOTE:</b> &nbsp;1. This Invoice is due for payment on_______</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Interest at the rate of 15% p.a will be charged after due date.</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp3. our responsibility ceases no sooner the goods leave our premises.</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Subject to <b>SILVASSA</b> Jurisdiction
 					</td>
-					<td colspan="4" rowspan="" height="80" cellborder="0" align="right" valign="top"><b>For SARAL ELECTRICALS</b><br><br><br><br>Authorised Signatory</td>
+					<td colspan="4" rowspan="" height="80" cellborder="0" align="right" valign="top"><b>For DEMO</b><br><br><br><br>Authorised Signatory</td>
 
 
 
@@ -1172,7 +1171,7 @@ $row = mysqli_fetch_array($sql);
 			<thead>
 				<tr>
 					<th colspan="30" valign="bottom">
-						<font size="6"><b>SARAL ELECTRICALS</b></font>
+						<font size="6"><b>DEMO</b></font>
 					</th>
 				</tr>
 			</thead>
@@ -1180,7 +1179,7 @@ $row = mysqli_fetch_array($sql);
 			<tbody>
 				<tr>
 
-					<td colspan="30" align="center"> 22,Raj Industrial Estate,66 KV Amli, Industrial Area,</br> SILVASSA-396 230, (U.T) Ph.:(0260)2643317</td>
+					<td colspan="30" align="center"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, animi.</br> Lorem ipsum dolor sit amet.</td>
 
 				</tr>
 				<tr>
@@ -1422,7 +1421,7 @@ $row = mysqli_fetch_array($sql);
 				</tr>
 
 				<tr>
-					<td colspan="23"><b>HDFC BANK A/c no.</b>&nbsp;&nbsp;&nbsp;&nbsp;00742020000639
+					<td colspan="23"><b>HDFC BANK A/c no.</b>&nbsp;&nbsp;&nbsp;&nbsp;00742023400639
 					</td>
 					<td colspan="2"><b>Round Off</b></td>
 
@@ -1430,7 +1429,7 @@ $row = mysqli_fetch_array($sql);
 
 				</tr>
 				<tr>
-					<td colspan="23"><b>RTGS/NEFT IFSC:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HDFC0000074</td>
+					<td colspan="23"><b>RTGS/NEFT IFSC:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HDFC1200074</td>
 					<td colspan="2"><b>Grand Total</b></td>
 
 					<td colspan="4" align="right" class="a"><i class="fa fa-rupee"></i> <?php echo number_format(($row['grandtotal']), 2) ?></td>
@@ -1497,7 +1496,7 @@ $row = mysqli_fetch_array($sql);
 				<tr rowspan="">
 					<td colspan="24" valign="top"><b>NOTE:</b> &nbsp;1. This Invoice is due for payment on_______</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Interest at the rate of 15% p.a will be charged after due date.</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp3. our responsibility ceases no sooner the goods leave our premises.</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Subject to <b>SILVASSA</b> Jurisdiction
 					</td>
-					<td colspan="4" rowspan="" height="80" cellborder="0" align="right" valign="top"><b>For SARAL ELECTRICALS</b><br><br><br><br>Authorised Signatory</td>
+					<td colspan="4" rowspan="" height="80" cellborder="0" align="right" valign="top"><b>For DEMO</b><br><br><br><br>Authorised Signatory</td>
 
 
 
