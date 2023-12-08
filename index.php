@@ -8,8 +8,6 @@ $customers = mysqli_query($conn, "SELECT * FROM customer") or die(mysqli_error()
 $customerCount = mysqli_num_rows($customers);
 $consignees = mysqli_query($conn, "SELECT * FROM consignee") or die(mysqli_error());
 $consigneeCount = mysqli_num_rows($consignees);
-$states = mysqli_query($conn, "SELECT * FROM state") or die(mysqli_error());
-$stateCount = mysqli_num_rows($states);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,14 +24,6 @@ $stateCount = mysqli_num_rows($states);
       position: absolute;
       top: 10px;
       left: 93%;
-    }
-
-    .container-fluid {
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-left: 200px;
     }
 
     .count-box {
@@ -58,10 +48,10 @@ $stateCount = mysqli_num_rows($states);
   <a href="backupdb.php" class="btn btn-danger backup-btn" target="_blank"><i class="fa fa-print"></i> Backup</a>
 
   <!-- Count Boxes -->
-  <div class="container-fluid">
-    <div class="row col-md-12">
+  <div class="container">
+    <div class="row">
       <a href="quot_list.php">
-        <div class="col-md-2">
+        <div class="col-md-3">
           <div class="count-box">
             <h3>Invoice</h3>
             <p><?= $invoiceCount ?></p>
@@ -69,7 +59,7 @@ $stateCount = mysqli_num_rows($states);
         </div>
       </a>
       <a href="item-list.php">
-        <div class="col-md-2">
+        <div class="col-md-3">
           <div class="count-box">
             <h3>Item</h3>
             <p><?= $itemCount ?></p>
@@ -77,7 +67,7 @@ $stateCount = mysqli_num_rows($states);
         </div>
       </a>
       <a href="customer-list.php">
-        <div class="col-md-2">
+        <div class="col-md-3">
           <div class="count-box">
             <h3>Customer</h3>
             <p><?= $customerCount ?></p>
@@ -85,18 +75,10 @@ $stateCount = mysqli_num_rows($states);
         </div>
       </a>
       <a href="consignee-list.php">
-        <div class="col-md-2">
+        <div class="col-md-3">
           <div class="count-box">
             <h3>Consignee</h3>
             <p><?= $consigneeCount ?></p>
-          </div>
-        </div>
-      </a>
-      <a href="consignee-list.php">
-        <div class="col-md-2">
-          <div class="count-box">
-            <h3>State</h3>
-            <p><?= $stateCount ?></p>
           </div>
         </div>
       </a>

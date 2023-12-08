@@ -36,5 +36,5 @@
   <a href="customer-list.php">Customer Master</a>
   <a href="consignee-list.php">Consignee Master</a>
   <a href="state-list.php">State</a>
-  <a href="gstdetail.php">Gst list</a>
+  <a href="gstdetail.php">GST List</a>
 </div>

@@ -1,12 +1,12 @@
 <?php
 date_default_timezone_set("Asia/Kolkata");
-backup_tables('localhost', 'root', 'Kev@l8347', 'saral2');
+backup_tables('localhost', 'u839991197_billing', 'Billing@cs@2023', 'u839991197_billing');
 
 /* backup the db OR just a table */
 $host = 'localhost';
-$user = 'root';
-$pass = 'Kev@l8347';
-$name = 'saral2';
+$user = 'u839991197_billing';
+$pass = 'Billing@cs@2023';
+$name = 'u839991197_billing';
 
 function backup_tables($host, $user, $pass, $name, $tables = '*')
 {
