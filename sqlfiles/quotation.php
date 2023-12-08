@@ -48,7 +48,7 @@ if ($action == 'INSERT') {
 	$c_month = date('m');
 
 
-	
+
 	$check_query = mysqli_query($conn, "select * from invoice where year(inv_date)='$c_year' and month(inv_date)='$c_month' order by q_n desc limit 1 ") or die(mysqli_error());
 	if (mysqli_num_rows($check_query)) {
 		$row = mysqli_fetch_array($check_query);
@@ -58,20 +58,20 @@ if ($action == 'INSERT') {
 	}
 	$insert_query = mysqli_query($conn, "insert into invoice (`quot_no`, `q_n`, `order_no`, `quot_cust`, `transmode`, `supplydate`, `conname`, `lrno`, `vehicleno`, `subtotal`, `packing`, `transpotation`, `grandtotal`, `cgst`, `igst`, `sgst`, `cgst_amt`, `igst_amt`, `sgst_amt`, `inv_date`, `order_date`, `rvalue`)
 	values('$quot_no','$q_n','$order_no','$q_custname','$transmode','$supplydate','$cons_name','$lrno','$vehicleno','$sub_total','$packing','$frieght','$grand_total','$cgstper','$igstper','$sgstper','$cgst_tot','$igst_add','$sgst_tot','$current_date','$order_date','$rofval')") or die(mysqli_error());
-	
+
 	$quot_id = mysqli_insert_id($conn);
-	
+
 	$item_desc1 = $_POST['item_id'];
-	
+
 	$quantity1 = $_POST['item_quantity'];
 	$unit1 = $_POST['unit'];
 	$rate1 = $_POST['item_rate'];
-	
+
 	$total1 = $_POST['item_total'];
 	$discount1 = $_POST['discount'];
 	$taxableval1 = $_POST['taxableval'];
-	
-	
+
+
 	foreach ($item_desc1 as $key => $value) {
 
 		$item_desc = $value;
@@ -134,8 +134,6 @@ if ($action == 'INSERT') {
 
 	$quot_id = $_POST['inv_id'];
 
-
-
 	$item_desc1 = $_POST['item_id'];
 
 	$quantity1 = $_POST['item_quantity'];
@@ -145,25 +143,25 @@ if ($action == 'INSERT') {
 	$total1 = $_POST['item_total'];
 	$discount1 = $_POST['discount'];
 	$taxableval1 = $_POST['taxableval'];
-	$sql = mysqli_query($conn, "UPDATE `invoice` SET 		  	
-		  	`quot_cust`= '$q_custname' ,
-		  	`transmode`= '$transmode' ,
-		  	`supplydate`= '$supplydate',
-		  	`conname`= '$cons_name'
-		  	,`lrno`= '$lrno'
-		  	,`vehicleno`= '$vehicleno'
-		  	,`subtotal`= '$sub_total'
-		  	,`packing`= '$packing'
-		  	,`transpotation`= '$frieght'
-		  	,`grandtotal`= '$grand_total'
-		  	,`cgst`= '$cgstper '
-		  	,`igst`= '$igstper'
-		  	,`sgst`= '$sgstper'
-		  	,`cgst_amt`= '$cgst_tot'
-		  	,`igst_amt`= '$igst_add'
-		  	,`sgst_amt`= '$sgst_tot'
-		  	,`rvalue`= '$rofval'
-		  	 WHERE quot_id='$quot_id' ");
+	$sql = mysqli_query($conn, "UPDATE `invoice` SET 
+    `quot_cust`= '$q_custname',
+    `transmode`= '$transmode',
+    `supplydate`= '$supplydate',
+    `conname`= '$cons_name',
+    `lrno`= '$lrno',
+    `vehicleno`= '$vehicleno',
+    `subtotal`= '$sub_total',
+    `packing`= '$packing',
+    `transpotation`= '$frieght',
+    `grandtotal`= '$grand_total',
+    `cgst`= '$cgstper ',
+    `igst`= '$igstper',
+    `sgst`= '$sgstper',
+    `cgst_amt`= '$cgst_tot',
+    `igst_amt`= '$igst_add',
+    `sgst_amt`= '$sgst_tot',
+    `rvalue`= '$rofval'
+    WHERE quot_id='$quot_id'");
 	if ($sql) {
 		$dq = mysqli_query($conn, "DELETE FROM invoice_desc WHERE quot_id='$quot_id' ") or die(mysqli_error());
 		if ($dq) {

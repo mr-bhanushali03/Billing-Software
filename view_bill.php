@@ -87,14 +87,12 @@ $row = mysqli_fetch_array($sql);
 		$last = $nextrow['quot_id'];
 	}
 	?>
-	<P align="center" font size="6">
+	<p align="center">
 		<button onclick="location.href='view_bill.php?q_id=<?php echo $first; ?>'" class="a">First</button>
 		<button onclick="location.href='view_bill.php?q_id=<?php echo $previd; ?>'" class="a">Previous</button>
 		<button onclick="location.href='view_bill.php?q_id=<?php echo $nextid; ?>'" class="a">Next</button>
 		<button onclick="location.href='view_bill.php?q_id=<?php echo $last; ?>'" class="a">Last</button>
-		<!--<a href="view_bill.php?q_id=<?php echo $previd; ?>">Previous</a>
-<a href="view_bill.php?q_id=<?php echo $nextid; ?>">Next</a>-->
-	</P>
+	</p>
 	<table align="center" style="page-break-before: always;" class=>
 		<tr>
 
@@ -167,8 +165,6 @@ $row = mysqli_fetch_array($sql);
 				<td colspan="5"> <?php $time = strtotime($row['order_date']);
 									$myFormatForView = date("d/m/Y", $time);
 
-
-
 									echo $myFormatForView;  ?></td>
 
 				<td colspan="3">Place of Supply</td>
@@ -177,17 +173,12 @@ $row = mysqli_fetch_array($sql);
 
 			</tr>
 
-
-
-
 			<tr>
 				<td colspan="30"></td>
 
 			</tr>
 			<tr>
 				<td colspan="27" align="center">Details of Reciver | Bill to:</td>
-
-
 
 			</tr>
 			<tr>
@@ -201,8 +192,6 @@ $row = mysqli_fetch_array($sql);
 				$ss = mysqli_fetch_array($squery);
 				?>
 				<td colspan="27"><b><?php echo $cu['custname']; ?></b></td>
-
-
 
 			</tr>
 			<tr>
@@ -224,19 +213,11 @@ $row = mysqli_fetch_array($sql);
 									?>
 				</td>
 
-
 			</tr>
-
-
-
-
-
 
 			<tr>
 				<td colspan="2">GSTIN</td>
 				<td colspan="27" class="a"><?php echo $cu['gstin']; ?></td>
-
-
 
 			</tr>
 			<tr>
@@ -246,13 +227,11 @@ $row = mysqli_fetch_array($sql);
 				<td colspan="1">State Code</td>
 				<td colspan="4" class="a"><?php echo $ss['state_code']; ?></td>
 
-
 			</tr>
 			<tr>
 				<td colspan="30"></td>
 
 			</tr>
-
 
 			<tr>
 				<td rowspan="" width="10">Sr No.</td>
@@ -331,8 +310,6 @@ $row = mysqli_fetch_array($sql);
 				<td colspan="4" align="right" class="a"><?php echo number_format(($row['subtotal'] + $row['transpotation'] + $row['packing']), 2); ?></td>
 
 			</tr>
-
-
 
 			<tr <?php if ($row['cgst_amt'] == '0.00') {
 					echo "style='display:none' ";
@@ -422,41 +399,25 @@ $row = mysqli_fetch_array($sql);
 					echo "<b>" . "Amount In Words: " . "</b>" . "Rupees  " . $result  . $points . " Only.";
 					?>
 
-
 				</td>
 
-
-
 			</tr>
-
-
-
 
 			<tr rowspan="">
 				<td colspan="24" valign="top"><b>NOTE:</b> &nbsp;1. This Invoice is due for payment on_______</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Interest at the rate of 15% p.a will be charged after due date.</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp3. our responsibility ceases no sooner the goods leave our premises.</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Subject to <b>SILVASSA</b> Jurisdiction
 				</td>
 				<td colspan="4" rowspan="" height="80" cellborder="0" align="right" valign="top"><b>For DEMO</b><br><br><br><br>Authorised Signatory</td>
-
-
-
 			</tr>
 
-
 		</tbody>
-		<!-- <tfoot>
-   <tr>
-      <td colspan="30" height="" width=""align="center"></td>
-      
-    </tr>
-  </tfoot>
- -->
-
 
 	</table>
-	<p align="center"><a href="invoice_print.php?id=<?php echo $row['quot_id'] ?>" class="btn btn-danger text-orange" target="_blank" class="on-default remove-row" align="center">
+	<p align="center">
+		<a href="invoice_print.php?id=<?php echo $row['quot_id'] ?>" class="btn btn-danger text-orange" target="_blank">
 			<font size="8"><i class="fa fa-print"> Print</i></font>
-		</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="quot_list.php?id=<?php echo $row['quot_id'] ?>" class="btn btn-danger text-orange" target="" class="on-default remove-row" align="center">
+		</a>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="quot_list.php" class="btn btn-danger text-orange">
 			<font size="8"><i class="fa-back"> Cancel</i></font>
 		</a>
 	</p>
@@ -467,8 +428,6 @@ $row = mysqli_fetch_array($sql);
 
 <script>
 	{
-		//window.print();
-
-
+		// window.print();
 	}
 </script>

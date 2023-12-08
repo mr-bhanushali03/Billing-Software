@@ -871,7 +871,7 @@ if (isset($_REQUEST['inv_id'])) {
           //alert(data);
           if (data.trim() == '2') {
             alert("Bill Update Successfully")
-            location.reload();
+            location.href = "quot_list.php";
 
           } else if (data.trim() == '1') {
             $('.dropify-clear').click();
