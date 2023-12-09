@@ -73,7 +73,7 @@ if (isset($_POST["update"])) {
 
 								<th class="col-md-8">
 									<span id="gstatus">Please enter a valid GSTIN Number.</span></br>
-									<input type="text" data-error="Enter gstin" required="" name="gstinn" value="<?php echo $row['gstin']; ?>" s class="form-control white-class" onkeyup="gstinn_validate(this.value);">
+									<input type="text" data-error="Enter gstin" required="true" name="gstinn" value="<?php echo $row['gstin']; ?>" s class="form-control white-class" onkeyup="gstinn_validate(this.value);">
 								</th>
 							</tr>
 							<tr>
@@ -81,7 +81,7 @@ if (isset($_POST["update"])) {
 									<label class="col-xl-3 control-label">Address </label>
 								</th>
 								<th class="col-md-18">
-									<textarea name="ad1" class="form-control white-class"> <?php echo $row['addr']; ?></textarea>
+									<textarea name="ad1" class="form-control white-class" required="true"><?php echo $row['addr']; ?></textarea>
 								</th>
 							</tr>
 							<tr>
@@ -140,7 +140,7 @@ if (isset($_POST["update"])) {
 							</th>
 
 							<th class="col-md-8">
-								<input type="number" data-error="Enter pin code" required="required" name="c_pin" value="<?php echo $row['pin_code']; ?>" class="form-control white-class">
+								<input type="text" data-error="Enter 6-digit pin code" required="required" name="c_pin" value="<?php echo $row['pin_code']; ?>" class="form-control white-class" pattern="\d{6}">
 							</th>
 						</tr>
 						<tr>
@@ -164,7 +164,7 @@ if (isset($_POST["update"])) {
 							<th class="col-md-8 text-center" colspan="2">
 								<input type="submit" name="update" value="UPDATE" class="btn btn-primary text-orange">
 
-								<input type="reset" name="cancel" value="CANCEL" class="btn btn-primary text-red">
+								<a href="consignee-list.php" name="cancel" class="btn btn-primary text-red">CANCEL</a>
 							</th>
 						</tr>
 						</thead>

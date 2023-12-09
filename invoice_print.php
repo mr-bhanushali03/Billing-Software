@@ -248,13 +248,13 @@ $row = mysqli_fetch_array($sql);
 				$id = $_REQUEST['id'];
 				$sqli = mysqli_query($conn, "SELECT * FROM invoice_desc WHERE quot_id='$id' ") or die(mysqli_error());
 				while ($r = mysqli_fetch_array($sqli)) {
-					$hsn = $r['item_desc'];
-					$pro = mysqli_query($conn, "SELECT * FROM item_detail WHERE p_name='$hsn' ") or die(mysqli_error());
+					$itemID = $r['item_desc'];
+					$pro = mysqli_query($conn, "SELECT * FROM item_detail WHERE p_sno='$itemID' ") or die(mysqli_error());
 					$name = mysqli_fetch_array($pro);
 				?>
 					<tr>
 						<td width="10"><?php echo $sno; ?></td>
-						<td colspan="20" width="" class="a"><?php echo $r['item_desc']; ?></td>
+						<td colspan="20" width="" class="a"><?php echo $name['p_name']; ?></td>
 						<td><?php echo $name['p_hsn']; ?></td>
 						<td width="10" align="center" class="a"><?php echo $r['quantity']; ?></td>
 						<td align="right" class="a"><?php echo number_format(($r['rate']), 2) ?></td>
@@ -611,13 +611,13 @@ $row = mysqli_fetch_array($sql);
 				$id = $_REQUEST['id'];
 				$sqli = mysqli_query($conn, "SELECT * FROM invoice_desc WHERE quot_id='$id' ") or die(mysqli_error());
 				while ($r = mysqli_fetch_array($sqli)) {
-					$hsn = $r['item_desc'];
-					$pro = mysqli_query($conn, "SELECT * FROM item_detail WHERE p_name='$hsn' ") or die(mysqli_error());
+					$itemID = $r['item_desc'];
+					$pro = mysqli_query($conn, "SELECT * FROM item_detail WHERE p_sno='$itemID' ") or die(mysqli_error());
 					$name = mysqli_fetch_array($pro);
 				?>
 					<tr>
 						<td width="10"><?php echo $sno; ?></td>
-						<td colspan="20" width="" class="a"><?php echo $r['item_desc']; ?></td>
+						<td colspan="20" width="" class="a"><?php echo $name['p_name']; ?></td>
 						<td><?php echo $name['p_hsn']; ?></td>
 						<td width="10" align="center" class="a"><?php echo $r['quantity']; ?></td>
 						<td align="right" class="a"><?php echo number_format(($r['rate']), 2) ?></td>
@@ -973,13 +973,13 @@ $row = mysqli_fetch_array($sql);
 				$id = $_REQUEST['id'];
 				$sqli = mysqli_query($conn, "SELECT * FROM invoice_desc WHERE quot_id='$id' ") or die(mysqli_error());
 				while ($r = mysqli_fetch_array($sqli)) {
-					$hsn = $r['item_desc'];
-					$pro = mysqli_query($conn, "SELECT * FROM item_detail WHERE p_name='$hsn' ") or die(mysqli_error());
+					$itemID = $r['item_desc'];
+					$pro = mysqli_query($conn, "SELECT * FROM item_detail WHERE p_sno='$itemID' ") or die(mysqli_error());
 					$name = mysqli_fetch_array($pro);
 				?>
 					<tr>
 						<td width="10"><?php echo $sno; ?></td>
-						<td colspan="20" width="" class="a"><?php echo $r['item_desc']; ?></td>
+						<td colspan="20" width="" class="a"><?php echo $name['p_name']; ?></td>
 						<td><?php echo $name['p_hsn']; ?></td>
 						<td width="10" align="center" class="a"><?php echo $r['quantity']; ?></td>
 						<td align="right" class="a"><?php echo number_format(($r['rate']), 2) ?></td>
@@ -1331,13 +1331,13 @@ $row = mysqli_fetch_array($sql);
 				$id = $_REQUEST['id'];
 				$sqli = mysqli_query($conn, "SELECT * FROM invoice_desc WHERE quot_id='$id' ") or die(mysqli_error());
 				while ($r = mysqli_fetch_array($sqli)) {
-					$hsn = $r['item_desc'];
-					$pro = mysqli_query($conn, "SELECT * FROM item_detail WHERE p_name='$hsn' ") or die(mysqli_error());
+					$itemID = $r['item_desc'];
+					$pro = mysqli_query($conn, "SELECT * FROM item_detail WHERE p_sno='$itemID' ") or die(mysqli_error());
 					$name = mysqli_fetch_array($pro);
 				?>
 					<tr>
 						<td width="10"><?php echo $sno; ?></td>
-						<td colspan="20" width="" class="a"><?php echo $r['item_desc']; ?></td>
+						<td colspan="20" width="" class="a"><?php echo $name['p_name']; ?></td>
 						<td><?php echo $name['p_hsn']; ?></td>
 						<td width="10" align="center" class="a"><?php echo $r['quantity']; ?></td>
 						<td align="right" class="a"><?php echo number_format(($r['rate']), 2) ?></td>

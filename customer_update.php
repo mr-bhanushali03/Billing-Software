@@ -98,7 +98,7 @@ if (isset($_POST["update"])) {
 
 								<th class="col-md-18">
 									<!--<input type="text" data-error="" required="" name="ad1" value="<?php echo $row['addr1']; ?>"class="form-control white-class" >-->
-									<textarea name="ad1" class="form-control white-class"> <?php echo $row['addr']; ?></textarea>
+									<textarea name="ad1" class="form-control white-class" required> <?php echo $row['addr']; ?></textarea>
 								</th>
 							</tr>
 
@@ -165,7 +165,7 @@ if (isset($_POST["update"])) {
 							</th>
 
 							<th class="col-md-8">
-								<input type="number" data-error="Enter pin code" required="required" name="c_pin" value="<?php echo $row['pin_code']; ?>" class="form-control white-class">
+								<input type="text" data-error="Enter pin code" required="required" name="c_pin" value="<?php echo $row['pin_code']; ?>" class="form-control white-class" pattern="\d{6}">
 							</th>
 						</tr>
 
@@ -194,7 +194,7 @@ if (isset($_POST["update"])) {
 							<th class="col-md-8 text-center" colspan="2">
 								<input type="submit" name="update" value="UPDATE" class="btn btn-primary text-orange">
 
-								<input type="reset" name="cancel" value="CANCEL" class="btn btn-primary text-red">
+								<a href="customer-list.php" name="cancel" class="btn btn-primary text-red">CANCEL</a>
 							</th>
 						</tr>
 

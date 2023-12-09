@@ -167,7 +167,6 @@ $row = mysqli_fetch_array($sql);
 								<th class="col-md-8 text-center" colspan="2">
 									<a href="consignee_update.php?C_id=<?php echo $row['id'] ?>" class="btn btn-primary text-orange" target="" class="on-default remove-row"><i class="fa fa-eye"> Want to Update???</i></a>
 									<a href="consignee-list.php" class="btn btn-primary text-orange" target="" class="on-default remove-row"><i class="fa fa-eye"> Cancel</i></a>
-
 								</th>
 							</tr>
 

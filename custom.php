@@ -84,13 +84,11 @@ if (isset($_POST["Add"])) {
 							</tr>
 
 							<tr>
-
 								<th class="text-center">
 									<label class="col-xl-3 control-label">Address: </label>
 								</th>
-
 								<th class="col-md-18">
-									<textarea name="c_addr"> </textarea>
+									<textarea name="c_addr" class="form-control white-class" required></textarea>
 								</th>
 							</tr>
 
@@ -106,26 +104,35 @@ if (isset($_POST["Add"])) {
 
 							<tr>
 
+							<tr>
 								<th class="text-center">
 									<label class="col-xl-3 control-label">State: </label>
 								</th>
-
 								<th class="col-md-8">
-
-
-									<select id="c_state " name="c_state" class="form-control select2">
-										<option selected>--state--</option>
+									<select id="c_state" name="c_state" class="form-control select2" onchange="validateState()" required>
+										<option value="" selected disabled>--state--</option>
 										<?php
 										$sql = mysqli_query($conn, "select * from state") or die(mysqli_error());
 										while ($row = mysqli_fetch_array($sql)) {
 										?>
 											<option value="<?php echo $row['sid']; ?>"> <?php echo $row['state']; ?></option>
 										<?php } ?>
-
-
 									</select>
+									<div id="stateError" style="color: red;"></div>
 								</th>
 							</tr>
+							<script>
+								function validateState() {
+									var stateSelect = document.getElementById("c_state");
+									var stateError = document.getElementById("stateError");
+
+									if (stateSelect.value === "") {
+										stateError.innerHTML = "Please select a state.";
+									} else {
+										stateError.innerHTML = "";
+									}
+								}
+							</script>
 
 							<tr>
 								<th class="text-center">
@@ -143,7 +150,7 @@ if (isset($_POST["Add"])) {
 								</th>
 
 								<th class="col-md-8">
-									<input type="number" data-error="Enter pin code" required="required" name="c_pin" class="form-control white-class">
+									<input type="text" data-error="Enter 6-digit pin code" required="required" name="c_pin" class="form-control white-class" pattern="\d{6}">
 								</th>
 							</tr>
 

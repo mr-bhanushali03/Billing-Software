@@ -47,51 +47,50 @@ if ($action == 'INSERT') {
 
 	$c_month = date('m');
 
-
-
-	$check_query = mysqli_query($conn, "select * from invoice where year(inv_date)='$c_year' and month(inv_date)='$c_month' order by q_n desc limit 1 ") or die(mysqli_error());
-	if (mysqli_num_rows($check_query)) {
-		$row = mysqli_fetch_array($check_query);
-		$q_n = intval($row['q_n']) + 1;
+	$item_desc1 = $_POST['item_id'];
+	if ($_POST['item_id'] == null) {
+		echo "null";
 	} else {
-		$q_n = '100';
-	}
-	$insert_query = mysqli_query($conn, "insert into invoice (`quot_no`, `q_n`, `order_no`, `quot_cust`, `transmode`, `supplydate`, `conname`, `lrno`, `vehicleno`, `subtotal`, `packing`, `transpotation`, `grandtotal`, `cgst`, `igst`, `sgst`, `cgst_amt`, `igst_amt`, `sgst_amt`, `inv_date`, `order_date`, `rvalue`)
+		$check_query = mysqli_query($conn, "select * from invoice where year(inv_date)='$c_year' and month(inv_date)='$c_month' order by q_n desc limit 1 ") or die(mysqli_error());
+		if (mysqli_num_rows($check_query)) {
+			$row = mysqli_fetch_array($check_query);
+			$q_n = intval($row['q_n']) + 1;
+		} else {
+			$q_n = '100';
+		}
+		$insert_query = mysqli_query($conn, "insert into invoice (`quot_no`, `q_n`, `order_no`, `quot_cust`, `transmode`, `supplydate`, `conname`, `lrno`, `vehicleno`, `subtotal`, `packing`, `transpotation`, `grandtotal`, `cgst`, `igst`, `sgst`, `cgst_amt`, `igst_amt`, `sgst_amt`, `inv_date`, `order_date`, `rvalue`)
 	values('$quot_no','$q_n','$order_no','$q_custname','$transmode','$supplydate','$cons_name','$lrno','$vehicleno','$sub_total','$packing','$frieght','$grand_total','$cgstper','$igstper','$sgstper','$cgst_tot','$igst_add','$sgst_tot','$current_date','$order_date','$rofval')") or die(mysqli_error());
 
-	$quot_id = mysqli_insert_id($conn);
+		$quot_id = mysqli_insert_id($conn);
 
-	$item_desc1 = $_POST['item_id'];
+		$quantity1 = $_POST['item_quantity'];
+		$unit1 = $_POST['unit'];
+		$rate1 = $_POST['item_rate'];
 
-	$quantity1 = $_POST['item_quantity'];
-	$unit1 = $_POST['unit'];
-	$rate1 = $_POST['item_rate'];
-
-	$total1 = $_POST['item_total'];
-	$discount1 = $_POST['discount'];
-	$taxableval1 = $_POST['taxableval'];
+		$total1 = $_POST['item_total'];
+		$discount1 = $_POST['discount'];
+		$taxableval1 = $_POST['taxableval'];
 
 
-	foreach ($item_desc1 as $key => $value) {
+		foreach ($item_desc1 as $key => $value) {
 
-		$item_desc = $value;
+			$item_desc = $value;
 
-		$quantity = $quantity1[$key];
-		$unit = $unit1[$key];
-		$rate = $rate1[$key];
-		$total = $total1[$key];
-		$discount = $discount1[$key];
-		$taxableval = $taxableval1[$key];
+			$quantity = $quantity1[$key];
+			$unit = $unit1[$key];
+			$rate = $rate1[$key];
+			$total = $total1[$key];
+			$discount = $discount1[$key];
+			$taxableval = $taxableval1[$key];
 
-		$insert_desc = mysqli_query($conn, "insert into invoice_desc (`quot_id`, `item_desc`,  `quantity`, `unit`, `rate`, `total`, `dis`, `tax_val`, `updated_date`) 
+			$insert_desc = mysqli_query($conn, "insert into invoice_desc (`quot_id`, `item_desc`,  `quantity`, `unit`, `rate`, `total`, `dis`, `tax_val`, `updated_date`) 
 	  		values('$quot_id','$item_desc','$quantity','$unit','$rate','$total','$discount','$taxableval','$current_date_time')");
-	}
+		}
 
+		if ($insert_query) {
 
-
-	if ($insert_query) {
-
-		echo "1";
+			echo "1";
+		}
 	}
 } elseif ($action == "UPDATE") {
 	$current_date = date("Y-m-d");
@@ -177,7 +176,7 @@ if ($action == 'INSERT') {
 				$taxableval = $taxableval1[$key];
 
 				$insert_desc = mysqli_query($conn, "insert into invoice_desc (`quot_id`, `item_desc`,  `quantity`, `unit`, `rate`, `total`, `dis`, `tax_val`, `updated_date`) 
-	  		values('$quot_id','$item_desc','$quantity','$unit','$rate','$total','$discount','$taxableval','$current_date_time')");
+				values('$quot_id','$item_desc','$quantity','$unit','$rate','$total','$discount','$taxableval','$current_date_time')");
 			}
 		}
 	}

@@ -150,8 +150,8 @@ if (isset($_REQUEST['inv_id'])) {
                                     <div class="form-group">
                                       <label class="col-md-4 control-label">Customer Name: </label>
                                       <div class="col-md-8">
-                                        <select name="q_custname" class="form-control select2">
-                                          <option selected>--CUSTOMER NAME--</option>
+                                        <select name="q_custname" class="form-control select2" required>
+                                          <option value="" selected disabled>--CUSTOMER NAME--</option>
                                           <?php
                                           $sql = mysqli_query($conn, "select * from customer") or die(mysqli_error());
                                           while ($row = mysqli_fetch_array($sql)) {
@@ -170,9 +170,9 @@ if (isset($_REQUEST['inv_id'])) {
                                     <div class="form-group">
                                       <label class="col-md-4 control-label">Transportation Mode: </label>
                                       <div class="col-md-8">
-                                        <input type="text" name="transmode" class="form-control " id="transmode" placeholder="Transportation Mode" value="<?php if (isset($Transportation)) {
-                                                                                                                                                            echo $Transportation;
-                                                                                                                                                          } ?>">
+                                        <input type="text" name="transmode" required="true" class="form-control " id="transmode" placeholder="Transportation Mode" value="<?php if (isset($Transportation)) {
+                                                                                                                                                                            echo $Transportation;
+                                                                                                                                                                          } ?>">
                                         <div class="help-block with-errors"></div>
                                       </div>
                                     </div>
@@ -180,25 +180,22 @@ if (isset($_REQUEST['inv_id'])) {
                                     <div class="form-group">
                                       <label class="col-md-4 control-label">Supply Date: </label>
                                       <div class="col-md-8">
-                                        <input type="date" name="supplydate" class="form-control " id="supplydate" value="<?php if (isset($supplydate)) {
-                                                                                                                            echo date('Y-m-d', strtotime($supplydate));
-                                                                                                                          } else {
-                                                                                                                            echo date('Y-m-d', strtotime($current_date));
-                                                                                                                          } ?>">
+                                        <input type="date" name="supplydate" required="true" class="form-control " id="supplydate" value="<?php if (isset($supplydate)) {
+                                                                                                                                            echo date('Y-m-d', strtotime($supplydate));
+                                                                                                                                          } else {
+                                                                                                                                            echo date('Y-m-d', strtotime($current_date));
+                                                                                                                                          } ?>">
                                         <div class="help-block with-errors"></div>
                                       </div>
                                     </div>
-
-
-
                                   </div>
 
                                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
                                       <label class="col-md-4 control-label">Consignee Name: </label>
                                       <div class="col-md-8">
-                                        <select name="cons_name" class="form-control select2">
-                                          <option selected>--CONSIGNEE NAME--</option>
+                                        <select name="cons_name" class="form-control select2" required>
+                                          <option value="" selected disabled>--CONSIGNEE NAME--</option>
                                           <?php
                                           $sql = mysqli_query($conn, "select * from consignee") or die(mysqli_error());
                                           while ($row = mysqli_fetch_array($sql)) {
@@ -217,9 +214,9 @@ if (isset($_REQUEST['inv_id'])) {
                                     <div class="form-group">
                                       <label class="col-md-4 control-label">LR NO: </label>
                                       <div class="col-md-8">
-                                        <input type="text" name="lrno" class="form-control " id="lrno" placeholder="LR NO" value="<?php if (isset($lr_no)) {
-                                                                                                                                    echo $lr_no;
-                                                                                                                                  } ?>">
+                                        <input type="text" name="lrno" required="true" class="form-control " id="lrno" placeholder="LR NO" value="<?php if (isset($lr_no)) {
+                                                                                                                                                    echo $lr_no;
+                                                                                                                                                  } ?>">
                                         <div class="help-block with-errors"></div>
                                       </div>
                                     </div>
@@ -227,9 +224,9 @@ if (isset($_REQUEST['inv_id'])) {
                                     <div class="form-group">
                                       <label class="col-md-4 control-label">Vehicle No: </label>
                                       <div class="col-md-8">
-                                        <input name="vehicleno" class="form-control" placeholder="Vehicle Number" value="<?php if (isset($vehicleno)) {
-                                                                                                                            echo $vehicleno;
-                                                                                                                          } ?>">
+                                        <input name="vehicleno" class="form-control" required="true" placeholder="Vehicle Number" value="<?php if (isset($vehicleno)) {
+                                                                                                                                            echo $vehicleno;
+                                                                                                                                          } ?>">
                                         <div class="help-block with-errors"></div>
                                       </div>
                                     </div>
@@ -281,28 +278,30 @@ if (isset($_REQUEST['inv_id'])) {
                                       <tbody id="">
                                         <tr>
                                           <td class="tda col-lg-2 column">
-                                            <select id="item_qty" name="item_qty" class="form-control select2">
-                                              <option value="" selected>-Select item-</option>
+                                            <select id="item_qty" name="item_qty" class="form-control select2" required>
+                                              <option value="0" selected disabled>-Select item-</option>
                                               <?php
                                               $retrive_query = mysqli_query($conn, "select * from item_detail") or die(mysqli_error());
                                               while ($row = mysqli_fetch_array($retrive_query)) {
-                                                $id = $row['p_sno']; ?>
-                                                <option value="<?php echo $id ?>"> <?php echo $row['p_name'] ?></option>
-                                              <?php }  ?>
+                                                $id = $row['p_sno'];
+                                              ?>
+                                                <option value="<?php echo $id ?>"><?php echo $row['p_name'] ?></option>
+                                              <?php } ?>
                                             </select>
-                                            <!-- <input type="text" data-error="Enter Item Name" required="required" name="item_name[]" class="form-control" >
-				-->
                                           </td>
                                           <td class="tda">
-                                            <input type="number" data-error="Enter Quantity" id="item_quantity" placeholder="0" name="qty" class="form-control " onchange="change_tot()">
+                                            <input type="text" id="item_quantity" placeholder="0" name="qty" class="form-control " onchange="change_tot()">
                                           </td>
-                                          <td class="tda">
-                                            <select id="unit" name="unit" class="form-control select2">
+                                          <td class="tda col-lg-2 column">
+                                            <select id="unit" name="unit" class="form-control select2" required>
+                                              <option value="0" selected disabled>-Select unit-</option>
                                               <option value="pcs">pcs</option>
+                                              <option value="kg">kg</option>
+                                              <option value="m">meters</option>
                                             </select>
                                           </td>
-                                          <td class="tda">
-                                            <input type="number" data-error="Enter Rate" id="rate" name="rate" step="0.01" class="form-control " placeholder="0.00" onchange="change_tot()">
+                                          <td>
+                                            <input type="text" id="rate" name="rate" step="0.01" class="form-control" placeholder="0.00" onchange="change_tot()">
                                           </td>
 
                                           <td class="tda">
@@ -310,17 +309,39 @@ if (isset($_REQUEST['inv_id'])) {
                                           </td>
 
                                           <td class="tda">
-                                            <input type="number" id="discount" name="discount" class="form-control " step="0.01" placeholder="0.00%" onChange="change_tott()" value="<?php echo "0.00"; ?>">
+                                            <input type="text" id="discount" name="discount" class="form-control " step="0.01" placeholder="0.00%" onChange="change_tott()" value="<?php echo "0.00"; ?>">
                                           </td>
 
                                           <td class="tda">
-                                            <input type="number" id="taxableval" name="taxableval" step="0.01" class="form-control " placeholder="0.00" readonly>
+                                            <input type="text" id="taxableval" name="taxableval" step="0.01" class="form-control " placeholder="0.00" readonly>
                                           </td>
 
-                                          <td class="tda ">
-                                            <button type="button" class="btn btn-warning waves-effect w-md waves-light m-b-10" onclick="clone_items()">Save</button>
+                                          <td class="tda">
+                                            <button type="button" class="btn btn-warning waves-effect waves-light" onclick="saveAndCloneItems()">Save</button>
                                           </td>
 
+                                          <script>
+                                            function saveAndCloneItems() {
+                                              // Check if all input fields are not null (have a value)
+                                              var itemQty = document.getElementById("item_qty").value;
+                                              var unit = document.getElementById("unit").value;
+                                              var itemQuantity = document.getElementById("item_quantity").value;
+                                              var rate = document.getElementById("rate").value;
+
+                                              // Add more input fields as needed
+                                              if (itemQty !== "" && unit !== "" && itemQuantity !== "" && rate !== "") {
+                                                // Call the clone_items() function when all fields have a value
+                                                clone_items();
+
+                                              } else {
+                                                // Handle the case where not all fields have a value (optional)
+                                                alert("Please fill in all required fields before saving.");
+                                              }
+
+                                              // Prevent default form submission
+                                              return false;
+                                            }
+                                          </script>
                                         </tr>
                                         <tr>
                                           <td colspan="5">&nbsp;</td>
@@ -408,9 +429,7 @@ if (isset($_REQUEST['inv_id'])) {
                                   <div class="form-group">
                                     <label class="col-md-5 control-label">Sub Total (<i class="fa fa-rupee"></i>):</label>
                                     <div class="col-md-7">
-                                      <input type="number" required="required" id="sub_total" name="sub_total" class="form-control " readonly value="<?php if (isset($subtotal)) {
-                                                                                                                                                        echo $subtotal;
-                                                                                                                                                      } ?>">
+                                      <input type="text" required="required" id="sub_total" name="sub_total" class="form-control" readonly value="<?php echo isset($subtotal) ? htmlspecialchars($subtotal) : ''; ?>">
                                       <div class="help-block with-errors"></div>
                                     </div>
                                   </div>
@@ -602,14 +621,14 @@ if (isset($_REQUEST['inv_id'])) {
       '<input type="text" data-index="' + count_row + '" readonly data-error="Enter rate" required="required" name="item_rate[]" value="' + document.getElementById("rate").value + '" class="form-control" >' +
       '</td>' +
       '<td class="tda">' +
-      '<input type="number" data-index="' + count_row + '" readonly required="required" id="item_total" name="item_total[]" value="' + document.getElementById("item_total").value + '" class="form-control" >' +
+      '<input type="text" data-index="' + count_row + '" readonly required="required" id="item_total" name="item_total[]" value="' + document.getElementById("item_total").value + '" class="form-control" >' +
       '</td>' +
       '<td class="tda">' +
-      '<input type="number" data-index="' + count_row + '" readonly required="required" id="discount" name="discount[]" value="' + document.getElementById("discount").value + '" class="form-control" >' +
+      '<input type="text" data-index="' + count_row + '" readonly required="required" id="discount" name="discount[]" value="' + document.getElementById("discount").value + '" class="form-control" >' +
       '</td>' +
 
       '<td class="tda">' +
-      '<input type="number" data-index="' + count_row + '" readonly required="required" id="taxableval" name="taxableval[]" value="' + document.getElementById("taxableval").value + '" class="form-control" >' +
+      '<input type="text" data-index="' + count_row + '" readonly required="required" id="taxableval" name="taxableval[]" value="' + document.getElementById("taxableval").value + '" class="form-control" >' +
       '</td>' +
 
 
@@ -643,18 +662,16 @@ if (isset($_REQUEST['inv_id'])) {
       if (disc == '') {
         disc = 0;
       }
-
-
     }
 
 
     srno = srno + 1;
-    item_qty.selectedIndex = 0;
+    $("#item_qty").select2("val", "0");
     document.getElementById("item_quantity").value = "";
     document.getElementById("rate").value = "";
     document.getElementById("item_total").value = "";
 
-    unit.selectedIndex = 0;
+    $("#unit").select2("val", "0");
     document.getElementById("discount").value = "";
     document.getElementById("taxableval").value = "";
 

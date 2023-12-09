@@ -64,7 +64,7 @@ if (isset($_POST["update"])) {
 										<th class="col-md-8 text-center" colspan="2">
 											<input type="submit" name="update" value="UPDATE" class="btn btn-primary text-orange">
 
-											<input type="reset" name="cancel" value="CANCEL" class="btn btn-primary text-red">
+											<a href="state-list.php" name="cancel" class="btn btn-primary text-red">CANCEL</a>
 										</th>
 									</tr>
 								</thead>
